@@ -48,6 +48,50 @@
             background-size: 200% 200%;
         }
 
+        .theme-button {
+    cursor: pointer;
+    padding: 5px;
+    transition: opacity 0.2s;
+}
+
+.theme-button:hover {
+    opacity: 0.7;
+}
+
+.theme-counter {
+    position: fixed;
+    top: 60px; 
+    right: 20px;
+    background: rgba(255, 255, 255, 0.9);
+    padding: 8px 15px;
+    border-radius: 20px;
+    font-size: 14px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    z-index: 100;
+    cursor: pointer;
+    transition: opacity 0.2s;
+}
+
+.theme-counter:hover {
+    opacity: 0.8;
+}
+
+@media (max-width: 480px) {
+    .high-score {
+        position: fixed;
+        top: auto;          
+        bottom: 20px;       
+        right: 20px;
+    }
+    
+    .theme-counter {
+        position: fixed;
+        top: auto;          
+        bottom: 60px;       
+        right: 20px;
+    }
+}
+
         @keyframes gradientBG {
             0% { background-position: 0% 50%; }
             50% { background-position: 100% 50%; }
@@ -66,17 +110,17 @@
         }
 
         .high-score {
-            position: fixed;
-            top: 20px;
-            right: 20px;
-            background: rgba(255, 255, 255, 0.9);
-            padding: 8px 15px;
-            border-radius: 20px;
-            font-size: 14px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-            z-index: 100;
-        }
-
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background: rgba(255, 255, 255, 0.9);
+    padding: 8px 15px;
+    border-radius: 20px;
+    font-size: 14px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    z-index: 100;
+    font-weight: bold;
+}
         .intro-container, .game-container {
             display: flex;
             flex-direction: column;
@@ -117,7 +161,7 @@
         }
 
         .hint-btn:hover, .give-up-btn:hover {
-    transform: translateY(-1px); /* Reduced transform */
+    transform: translateY(-1px); 
 }
 
         .play-button, #submitButton, .hint-btn, .give-up-btn {
@@ -134,16 +178,16 @@
         }
 
         .hint-btn, .give-up-btn {
-    font-size: 14px;  /* Reduced from clamp(16px, 3vw, 20px) */
-    padding: 8px 15px; /* Reduced from 15px 40px */
+    font-size: 14px;  
+    padding: 8px 15px; 
     background-color: var(--primary-color);
     color: white;
     border: none;
-    border-radius: 15px; /* Reduced from 25px */
+    border-radius: 15px; 
     cursor: pointer;
     transition: all 0.3s ease;
     margin: 5px;
-    width: auto; /* Changed from fixed width */
+    width: auto; 
 }
 
 .give-up-btn {
@@ -164,9 +208,9 @@
         .button-container {
     display: flex;
     justify-content: center;
-    gap: 8px;  /* Reduced gap */
+    gap: 8px;  
     width: 100%;
-    margin: 5px 0;  /* Reduced margin */
+    margin: 5px 0;  
 }
 
         #wordInput {
@@ -248,27 +292,50 @@
         }
 
         .popup-message {
-            position: fixed;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            background: rgba(0, 0, 0, 0.8);
-            color: white;
-            padding: 12px 24px;
-            border-radius: 20px;
-            animation: floatUp 1.5s ease-out;
-            z-index: 1000;
-            font-size: 20px;
-            font-weight: bold;
-            text-align: center;
-        }
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(0, 0, 0, 0.9);  /* Made slightly darker */
+    color: white;
+    padding: 15px 30px;    /* Made slightly larger */
+    border-radius: 25px;
+    z-index: 9999;
+    font-size: 24px;       /* Made larger */
+    font-weight: bold;
+    text-align: center;
+    opacity: 0;            /* Start invisible */
+    animation: popupAnimation 1.5s ease forwards;
+    pointer-events: none;
+    white-space: nowrap;   /* Keep text on one line */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
 
-        @keyframes floatUp {
-            0% { opacity: 0; transform: translate(-50%, -40%); }
-            20% { opacity: 1; }
-            80% { opacity: 1; }
-            100% { opacity: 0; transform: translate(-50%, -60%); }
-        }
+        @media (max-width: 480px) {
+    .high-score {
+        top: auto;
+        bottom: 20px;
+    }
+}
+
+@keyframes popupAnimation {
+    0% {
+        opacity: 0;
+        transform: translate(-50%, -40%);
+    }
+    15% {
+        opacity: 1;
+        transform: translate(-50%, -50%);
+    }
+    85% {
+        opacity: 1;
+        transform: translate(-50%, -50%);
+    }
+    100% {
+        opacity: 0;
+        transform: translate(-50%, -60%);
+    }
+}
 
         .score-display {
             font-size: clamp(18px, 4vw, 24px);
@@ -297,7 +364,10 @@
     </style>
 </head>
 <body>
-    <div class="high-score">Progress Today: <span id="highScoreDisplay">0/10</span></div>
+    <div class="high-score">Progress Today: <span id="highScoreDisplay">0/0</span></div>
+    <div class="theme-counter">
+        <span class="theme-button" onclick="cycleTheme()">🎨 Theme</span>
+    </div>
     <div class="container">
         <div class="intro-container" id="introScreen">
             <h1>Welcome to<br>Synonym Seeker!</h1>
@@ -307,7 +377,7 @@
 
         <div class="game-container" id="game">
             <h2 class="target-word"></h2>
-            <p class="score-display">Progress: 0/10 synonyms found</p>
+            <p class="score-display">Progress: 0/0 synonyms found</p>
             <input type="text" id="wordInput" placeholder="Enter a synonym" autocomplete="off">
             <div id="errorMessage"></div>
             <button id="submitButton">Submit</button>
@@ -321,7 +391,7 @@
         <div id="endScreen">
             <div class="popup">
                 <h2>Game Over!</h2>
-                <p>Found: <span id="finalScore">0/10</span> synonyms</p>
+                <p>Found: <span id="finalScore">0/0</span> synonyms</p>
                 <div id="wordSummary">
                     <h3>All Possible Synonyms:</h3>
                     <div class="all-words-grid"></div>
