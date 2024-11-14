@@ -579,6 +579,7 @@ let lastPlayDate = localStorage.getItem('lastPlayDate');
 let currentTheme = 0;
 
 // Initialize game when document is loaded
+// Initialize game when document is loaded
 document.addEventListener('DOMContentLoaded', function() {
   updateStreakDisplay();
   checkDailyPlay();
@@ -591,29 +592,116 @@ document.addEventListener('DOMContentLoaded', function() {
       }
       
       dailyWord = getDailyWord();
-      document.getElementById("introScreen").style.display = "none";
-      document.getElementById("game").style.display = "flex";
+      const introScreen = document.getElementById("introScreen");
+      const gameScreen = document.getElementById("game");
+      
+      if (introScreen) {
+          introScreen.style.display = "none";
+      }
+      if (gameScreen) {
+          gameScreen.style.display = "flex";
+      }
+      
       initializeGame();
   };
 
   window.closeEndScreen = function() {
-      document.getElementById("endScreen").style.display = "none";
-      document.getElementById("game").style.display = "none";
-      document.getElementById("introScreen").style.display = "flex";
+      const endScreen = document.getElementById("endScreen");
+      const gameScreen = document.getElementById("game");
+      const introScreen = document.getElementById("introScreen");
+      
+      if (endScreen) {
+          endScreen.style.display = "none";
+      }
+      if (gameScreen) {
+          gameScreen.style.display = "none";
+      }
+      if (introScreen) {
+          introScreen.style.display = "flex";
+      }
+      
       checkDailyPlay();
   };
 
+  // Get all the DOM elements we need
   const wordInput = document.getElementById("wordInput");
   const submitButton = document.getElementById("submitButton");
   const hintButton = document.querySelector(".hint-btn");
   const giveUpButton = document.querySelector(".give-up-btn");
 
-  submitButton.addEventListener('click', submitWord);
-  wordInput.addEventListener('keypress', (e) => {
-      if (e.key === 'Enter') submitWord();
-  });
-  hintButton.addEventListener('click', showHint);
-  giveUpButton.addEventListener('click', handleGiveUp);
+  // Add event listeners only if elements exist
+  if (submitButton) {
+      submitButton.addEventListener('click', submitWord);
+  }
+  
+  if (wordInput) {
+      wordInput.addEventListener('keypress', (e) => {
+          if (e.key === 'Enter') submitWord();
+      });
+  }
+  
+  // Add hint button event listener
+  if (hintButton) {
+      console.log("Hint button found"); // Debug log
+      hintButton.onclick = function() {
+          console.log("Hint button clicked"); // Debug log
+          if (!dailyWord || !dailyWord.synonyms) {
+              console.log("No daily word loaded"); // Debug log
+              return;
+          }
+
+          const upperFoundSynonyms = foundSynonyms.map(word => word.toUpperCase());
+          const remainingSynonyms = dailyWord.synonyms.filter(syn => 
+              !upperFoundSynonyms.includes(syn.toUpperCase())
+          );
+
+          if (remainingSynonyms.length > 0) {
+              const randomIndex = Math.floor(Math.random() * remainingSynonyms.length);
+              const randomSynonym = remainingSynonyms[randomIndex];
+              
+              // Remove any existing popups
+              const existingPopups = document.querySelectorAll('.popup-message');
+              existingPopups.forEach(popup => popup.remove());
+
+              // Create new popup
+              const popup = document.createElement("div");
+              popup.className = "popup-message";
+              popup.style.opacity = "1"; // Ensure visibility
+              popup.textContent = `Hint: Try a word starting with ${randomSynonym.substring(0, 2)}...`;
+              document.body.appendChild(popup);
+
+              // Remove the popup after animation
+              setTimeout(() => {
+                  if (popup && popup.parentNode) {
+                      popup.parentNode.removeChild(popup);
+                  }
+              }, 1500);
+          } else {
+              const popup = document.createElement("div");
+              popup.className = "popup-message";
+              popup.style.opacity = "1";
+              popup.textContent = "You've found all the synonyms! 🎉";
+              document.body.appendChild(popup);
+              
+              setTimeout(() => {
+                  if (popup && popup.parentNode) {
+                      popup.parentNode.removeChild(popup);
+                  }
+              }, 1500);
+          }
+      };
+  } else {
+      console.error("Hint button not found"); // Debug log
+  }
+  
+  if (giveUpButton) {
+      giveUpButton.addEventListener('click', handleGiveUp);
+  }
+
+  // Initialize window functions
+  window.returnHome = returnHome;
+  window.shareScore = shareScore;
+  window.cycleTheme = cycleTheme;
 });
 
 // Initialize theme system
@@ -765,12 +853,28 @@ function initializeGame() {
   gameOver = false;
   
   const wordDisplay = document.querySelector(".target-word");
-  wordDisplay.textContent = dailyWord.word;
-  const totalSynonyms = dailyWord.synonyms.length; // Get actual count
+  if (wordDisplay && dailyWord) {
+      wordDisplay.textContent = dailyWord.word;
+  }
+  
+  const totalSynonyms = dailyWord ? dailyWord.synonyms.length : 0;
+  
+  const foundWordsGrid = document.querySelector(".found-words-grid");
+  if (foundWordsGrid) {
+      foundWordsGrid.innerHTML = "";
+  }
+  
+  const wordInput = document.getElementById("wordInput");
+  if (wordInput) {
+      wordInput.value = "";
+  }
+  
+  const errorMessage = document.getElementById("errorMessage");
+  if (errorMessage) {
+      errorMessage.textContent = "";
+  }
+  
   updateProgressDisplay(totalSynonyms);
-  document.querySelector(".found-words-grid").innerHTML = "";
-  document.getElementById("wordInput").value = "";
-  document.getElementById("errorMessage").textContent = "";
 }
 
 function submitWord() {
@@ -844,14 +948,19 @@ function showPopupMessage(message) {
 }
 
 function updateProgressDisplay(totalSynonyms) {
-  document.querySelector(".score-display").textContent = 
-      `Progress: ${foundSynonyms.length}/${totalSynonyms} synonyms found`;
+  const scoreDisplay = document.querySelector(".score-display");
+  const highScoreDisplay = document.getElementById("highScoreDisplay");
+  
+  if (scoreDisplay) {
+      scoreDisplay.textContent = `Progress: ${foundSynonyms.length}/${totalSynonyms} synonyms found`;
+  }
+  
+  if (highScoreDisplay) {
+      highScoreDisplay.textContent = `${foundSynonyms.length}/${totalSynonyms}`;
+  }
+  
   updateFoundWords();
-  // Update the high score display too
-  document.getElementById("highScoreDisplay").textContent = 
-      `${foundSynonyms.length}/${totalSynonyms}`;
 }
-
 function updateFoundWords() {
   const wordsGrid = document.querySelector(".found-words-grid");
   wordsGrid.innerHTML = "";
@@ -865,24 +974,49 @@ function updateFoundWords() {
 }
 
 function showHint() {
-  // Convert all found synonyms to uppercase for comparison
+  if (!dailyWord || !dailyWord.synonyms) {
+      console.error("No daily word loaded");
+      return;
+  }
+
   const upperFoundSynonyms = foundSynonyms.map(word => word.toUpperCase());
-  
-  // Filter out synonyms that have already been found, comparing in uppercase
   const remainingSynonyms = dailyWord.synonyms.filter(syn => 
       !upperFoundSynonyms.includes(syn.toUpperCase())
   );
-  
+
   if (remainingSynonyms.length > 0) {
-      // Pick a random word from the remaining synonyms
       const randomIndex = Math.floor(Math.random() * remainingSynonyms.length);
       const randomSynonym = remainingSynonyms[randomIndex];
       
-      // Show first two letters as a hint
-      showPopupMessage(`Hint: Try a word starting with ${randomSynonym.substring(0, 2)}...`);
+      // Remove any existing popups
+      const existingPopups = document.querySelectorAll('.popup-message');
+      existingPopups.forEach(popup => popup.remove());
+
+      // Create new popup
+      const popup = document.createElement("div");
+      popup.className = "popup-message";
+      popup.style.opacity = "1"; // Ensure visibility
+      popup.textContent = `Hint: Try a word starting with ${randomSynonym.substring(0, 2)}...`;
+      document.body.appendChild(popup);
+
+      // Remove the popup after animation
+      setTimeout(() => {
+          if (popup && popup.parentNode) {
+              popup.parentNode.removeChild(popup);
+          }
+      }, 1500);
   } else {
-      // If all words have been found, show a different message
-      showPopupMessage("You've found all the synonyms! 🎉");
+      const popup = document.createElement("div");
+      popup.className = "popup-message";
+      popup.style.opacity = "1";
+      popup.textContent = "You've found all the synonyms! 🎉";
+      document.body.appendChild(popup);
+      
+      setTimeout(() => {
+          if (popup && popup.parentNode) {
+              popup.parentNode.removeChild(popup);
+          }
+      }, 1500);
   }
 }
 
