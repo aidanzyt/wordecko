@@ -1101,7 +1101,7 @@ function shareScore() {
 
   // Create formatted share text
   const dateStr = new Date().toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
-  const shareText = `Word Echo ${performanceEmoji} ${dateStr}\n` +
+  const shareText = `Wordecko ${performanceEmoji} ${dateStr}\n` +
       `Word: ${dailyWord.word}\n` +
       `Found: ${foundCount}/${totalSynonyms}\n` +
       `${gridRows.join('\n')}\n` +
@@ -1113,7 +1113,7 @@ function shareScore() {
   // Try native sharing first
   if (navigator.share) {
       navigator.share({
-          title: "Word Echo",
+          title: "Wordecko",
           text: fullShareText
       }).catch(error => console.error("Error sharing:", error));
   } else {
@@ -1128,9 +1128,9 @@ function shareScore() {
           <div class="share-buttons" style="margin-top: 20px; display: flex; justify-content: center; gap: 10px; flex-wrap: wrap;">
               <a href="https://twitter.com/intent/tweet?text=${encodeURIComponent(fullShareText)}" target="_blank" style="color: #1DA1F2; text-decoration: none; padding: 8px 16px; border-radius: 20px; background: #e8f5fd;">Twitter</a>
               <a href="https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(shareUrl)}&quote=${encodeURIComponent(shareText)}" target="_blank" style="color: #4267B2; text-decoration: none; padding: 8px 16px; border-radius: 20px; background: #e7eaf3;">Facebook</a>
-              <a href="https://www.linkedin.com/shareArticle?mini=true&url=${encodeURIComponent(shareUrl)}&title=${encodeURIComponent("Word Echo")}&summary=${encodeURIComponent(shareText)}" target="_blank" style="color: #0077B5; text-decoration: none; padding: 8px 16px; border-radius: 20px; background: #e1f0f8;">LinkedIn</a>
+              <a href="https://www.linkedin.com/shareArticle?mini=true&url=${encodeURIComponent(shareUrl)}&title=${encodeURIComponent("Wordecko")}&summary=${encodeURIComponent(shareText)}" target="_blank" style="color: #0077B5; text-decoration: none; padding: 8px 16px; border-radius: 20px; background: #e1f0f8;">LinkedIn</a>
               <a href="https://api.whatsapp.com/send?text=${encodeURIComponent(fullShareText)}" target="_blank" style="color: #25D366; text-decoration: none; padding: 8px 16px; border-radius: 20px; background: #e5f7ef;">WhatsApp</a>
-              <a href="mailto:?subject=${encodeURIComponent("Check out Word Echo!")}&body=${encodeURIComponent(fullShareText)}" style="color: #D44638; text-decoration: none; padding: 8px 16px; border-radius: 20px; background: #fce8e6;">Email</a>
+              <a href="mailto:?subject=${encodeURIComponent("Check out Wordecko!")}&body=${encodeURIComponent(fullShareText)}" style="color: #D44638; text-decoration: none; padding: 8px 16px; border-radius: 20px; background: #fce8e6;">Email</a>
           </div>
           <div style="display: flex; gap: 10px; justify-content: center; margin-top: 20px;">
               <button id="returnHomeButton" class="play-button" style="width: auto; margin: 0; background-color: #6c757d;" onclick="returnHome()">Return Home</button>
