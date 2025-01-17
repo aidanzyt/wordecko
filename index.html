@@ -5,12 +5,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Wordecko</title>
     <script>
-        window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments) };
+        // Initialize the Vercel Analytics queue
+        window.va = window.va || function () {
+            (window.vaq = window.vaq || []).push(arguments);
+        };
+        // Track the page view
         va('pageview');
-        </script>
+    </script>
     <script>
-        !function(t,e){var n=void 0!==t.self&&t.self.location&&"https:"===t.self.location.protocol,o=e.createElement("script");o.src="/_vercel/insights/script.js".concat(n?"":""),o.defer=!0,o.setAttribute("data-sdkn","@vercel/analytics"),o.setAttribute("data-sdkv","1.1.1"),(e.head||e.body).appendChild(o)}(window,document);
-        </script>
+        // Dynamically load the Vercel Analytics script
+        (function (window, document) {
+            var protocolIsSecure = window.location.protocol === "https:"; // Check for HTTPS
+            var script = document.createElement("script");
+            script.src = protocolIsSecure
+                ? "/_vercel/insights/script.js" // Secure URL for HTTPS
+                : "http://your-non-secure-domain.com/_vercel/insights/script.js"; // Replace with fallback for HTTP if needed
+            script.defer = true; // Non-blocking load
+            script.setAttribute("data-sdkn", "@vercel/analytics");
+            script.setAttribute("data-sdkv", "1.1.1");
+            script.onerror = function () {
+                console.error("Failed to load Vercel Analytics script.");
+            };
+            (document.head || document.body).appendChild(script); // Append to the document
+        })(window, document);
+    </script>    
     <style>
         :root {
             --primary-color: #4CAF50;
