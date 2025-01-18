@@ -562,28 +562,18 @@ const DAILY_WORDS = [
 }
 ];
 
-const colorThemes = [
-  { name: '🏖️ Beach', background: 'linear-gradient(120deg, #fdeb93 0%, #f5b785 100%)' },
-  { name: '💼 PwC', background: 'linear-gradient(120deg, #ffffff 0%, #d35400 100%)' },
-  { name: '🇲🇪 Montenegro', background: 'linear-gradient(120deg, #cb3f3f 0%, #ffe900 100%)' },
-  { name: '🍂 Crunchy Leaves', background: 'linear-gradient(120deg, #ffcc80 0%, #d84315 100%)' },
-  { name: '🥛 Doogh', background: 'linear-gradient(120deg, #e0f7fa 0%, #80deea 100%)' }
-];
-
 // Game state
 let foundSynonyms = [];
 let gameOver = false;
 let dailyWord = null;
 let streak = parseInt(localStorage.getItem('streak')) || 0;
 let lastPlayDate = localStorage.getItem('lastPlayDate');
-let currentTheme = 0;
 
 // Initialize game when document is loaded
 // Initialize game when document is loaded
 document.addEventListener('DOMContentLoaded', function() {
   updateStreakDisplay();
   checkDailyPlay();
-  initializeThemeSystem();
 
   window.startGame = function() {
       if (hasPlayedToday()) {
@@ -701,62 +691,7 @@ document.addEventListener('DOMContentLoaded', function() {
   // Initialize window functions
   window.returnHome = returnHome;
   window.shareScore = shareScore;
-  window.cycleTheme = cycleTheme;
 });
-
-// Initialize theme system
-function initializeThemeSystem() {
-  // Load saved theme preference
-  const savedTheme = localStorage.getItem('preferredTheme');
-  if (savedTheme !== null) {
-      currentTheme = parseInt(savedTheme);
-      applyTheme(currentTheme);
-  }
-}
-
-// Apply a specific theme
-function applyTheme(themeIndex) {
-  const theme = colorThemes[themeIndex];
-  document.body.style.background = theme.background;
-}
-
-// Cycle to next theme
-function cycleTheme() {
-  currentTheme = (currentTheme + 1) % colorThemes.length;
-  const theme = colorThemes[currentTheme];
-  
-  // Apply the theme
-  applyTheme(currentTheme);
-  
-  // Show theme name message
-  showThemeMessage(theme.name);
-  
-  // Save preference
-  localStorage.setItem('preferredTheme', currentTheme);
-}
-
-// Theme change message display
-function showThemeMessage(message) {
-  const popup = document.createElement('div');
-  popup.className = 'theme-message';
-  popup.textContent = message;
-  
-  // Style the popup
-  popup.style.position = 'fixed';
-  popup.style.top = '20px';
-  popup.style.left = '50%';
-  popup.style.transform = 'translateX(-50%)';
-  popup.style.backgroundColor = 'rgba(0, 0, 0, 0.8)';
-  popup.style.color = 'white';
-  popup.style.padding = '10px 20px';
-  popup.style.borderRadius = '5px';
-  popup.style.zIndex = '1000';
-  
-  document.body.appendChild(popup);
-  
-  // Remove after 2 seconds
-  setTimeout(() => popup.remove(), 2000);
-}
 
 function updateStreak() {
   const today = new Date().toDateString();
@@ -818,12 +753,6 @@ function getDailyWord() {
   
   // Get today's word using the shuffled index
   return DAILY_WORDS[shuffledIndices[indexInCycle]];
-}
-
-function addThemeStyles() {
-  const styleSheet = document.createElement('style');
-  styleSheet.textContent = themeStyles;
-  document.head.appendChild(styleSheet);
 }
 
 function checkDailyPlay() {
