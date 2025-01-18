@@ -1,1141 +1,565 @@
 // Game data
 const DAILY_WORDS = [
-{
-    word: 'FAST',
-    synonyms: ['QUICK', 'RAPID', 'SPEEDY', 'SWIFT', 'HURRIED']
-},
-{
-    word: 'BRAVE',
-    synonyms: ['COURAGEOUS', 'BOLD', 'FEARLESS', 'VALIANT', 'HEROIC']
-},
-{
-    word: 'BRIGHT',
-    synonyms: ['LUMINOUS', 'VIVID', 'RADIANT', 'DAZZLING', 'BRILLIANT']
-},
-{
-    word: 'KIND',
-    synonyms: ['CARING', 'GENTLE', 'COMPASSIONATE', 'CONSIDERATE', 'THOUGHTFUL']
-},
-{
-    word: 'CLEAN',
-    synonyms: ['TIDY', 'NEAT', 'SPOTLESS', 'PURE', 'HYGIENIC']
-},
-{
-    word: 'LOUD',
-    synonyms: ['NOISY', 'BOISTEROUS', 'THUNDEROUS', 'DEAFENING', 'CLAMOROUS']
-},
-{
-    word: 'SOFT',
-    synonyms: ['GENTLE', 'CUSHIONY', 'SUPPLE', 'PLUSH', 'SMOOTH']
-},
-{
-    word: 'ANGRY',
-    synonyms: ['FURIOUS', 'IRATE', 'MAD', 'ENRAGED', 'UPSET']
-},
-{
-    word: 'SMALL',
-    synonyms: ['TINY', 'MINUTE', 'MINIATURE', 'LITTLE', 'PETITE']
-},
-{
-    word: 'BIG',
-    synonyms: ['LARGE', 'HUGE', 'ENORMOUS', 'GIGANTIC', 'MASSIVE']
-},
-{
-    word: 'WARM',
-    synonyms: ['COZY', 'TOASTY', 'BALMY', 'MILD', 'HEATED']
-},
-{
-    word: 'SMOOTH',
-    synonyms: ['SLEEK', 'POLISHED', 'SILKY', 'GLIDING', 'FLAWLESS']
-},
-{
-    word: 'HARDWORKING',
-    synonyms: ['DILIGENT', 'INDUSTRIOUS', 'DEDICATED', 'PERSEVERING', 'TIRELESS']
-},
-{
-    word: 'FUN',
-    synonyms: ['ENJOYABLE', 'EXCITING', 'PLEASANT', 'AMUSING', 'ENTERTAINING']
-},
-{
-    word: 'TIRED',
-    synonyms: ['EXHAUSTED', 'WEARY', 'FATIGUED', 'DRAINED', 'SLUGGISH']
-},
-{
-    word: 'HEAVY',
-    synonyms: ['WEIGHTY', 'MASSIVE', 'BURDENSOME', 'HEFTY', 'PONDEROUS']
-},
-{
-    word: 'FAMOUS',
-    synonyms: ['RENOWNED', 'CELEBRATED', 'NOTABLE', 'PROMINENT', 'DISTINGUISHED']
-},
-{
-    word: 'LOUD',
-    synonyms: ['ROARING', 'THUNDEROUS', 'CLANGOROUS', 'RAUCOUS', 'PIERCING']
-},
-{
-    word: 'DEEP',
-    synonyms: ['PROFOUND', 'ABYSSAL', 'VAST', 'IMMENSE', 'UNFATHOMABLE']
-},
-{
-    word: 'HUNGRY',
-    synonyms: ['STARVING', 'RAVENOUS', 'PECKISH', 'FAMISHED', 'EMPTY']
-},
-{
-    word: 'QUICK',
-    synonyms: ['RAPID', 'NIMBLE', 'HURRIED', 'PROMPT', 'BRISK']
-},
-{
-    word: 'ELEGANT',
-    synonyms: ['STYLISH', 'GRACEFUL', 'REFINED', 'CLASSY', 'SOPHISTICATED']
-},
-{
-    word: 'BRITTLE',
-    synonyms: ['FRAGILE', 'CRUMBLY', 'BREAKABLE', 'FLIMSY', 'DELICATE']
-},
-{
-    word: 'HAPPY',
-    synonyms: ['ECSTATIC', 'CONTENTED', 'JOVIAL', 'UPBEAT', 'CHIPPER']
-},
-{
-    word: 'SHARP',
-    synonyms: ['POINTED', 'ACUTE', 'PIERCING', 'KEEN', 'RAPID']
-},
-{
-    word: 'STRONG',
-    synonyms: ['TENACIOUS', 'RESOLUTE', 'FIRM', 'RESILIENT', 'HARDY']
-},
-{
-    word: 'EMPTY',
-    synonyms: ['VACANT', 'VOID', 'BARE', 'HOLLOW', 'DEVOID']
-},
-{
-    word: 'HARD',
-    synonyms: ['INFLEXIBLE', 'SOLID', 'STURDY', 'DIFFICULT', 'RIGID']
-},
-{
-    word: 'BRIGHT',
-    synonyms: ['SHINING', 'GLISTENING', 'BRILLIANT', 'LUSTROUS', 'ILLUMINATED']
-},
-{
-    word: 'SOFT',
-    synonyms: ['YIELDING', 'GENTLE', 'CUSHIONED', 'SUPPLE', 'TENDER']
-},
-{
-    word: 'ANGUISHED',
-    synonyms: ['DISTRESSED', 'TORN', 'WOUNDED', 'PAINED', 'HURT']
-},
-{
-    word: 'CALM',
-    synonyms: ['SERENE', 'PEACEFUL', 'STILL', 'TRANQUIL', 'RELAXED']
-},
-{
-    word: 'GRATEFUL',
-    synonyms: ['THANKFUL', 'APPRECIATIVE', 'OBLIGED', 'INDEBTED', 'SATISFIED']
-},
-{
-    word: 'CHEAP',
-    synonyms: ['AFFORDABLE', 'BUDGET', 'INEXPENSIVE', 'LOW-COST', 'ECONOMICAL']
-},
-{
-    word: 'EXPENSIVE',
-    synonyms: ['COSTLY', 'LAVISH', 'PRICEY', 'OVERPRICED', 'VALUABLE']
-},
-{
-    word: 'POWERFUL',
-    synonyms: ['DOMINANT', 'MIGHTY', 'STRONG', 'INFLUENTIAL', 'IMPOSING']
-},
-{
-    word: 'FRAGILE',
-    synonyms: ['DELICATE', 'BREAKABLE', 'BRITTLE', 'FLIMSY', 'VULNERABLE']
-},
-{
-    word: 'HARMFUL',
-    synonyms: ['DANGEROUS', 'DAMAGING', 'INJURIOUS', 'DETRIMENTAL', 'PERILOUS']
-},
-{
-    word: 'HELPFUL',
-    synonyms: ['USEFUL', 'ASSISTIVE', 'BENEFICIAL', 'SUPPORTIVE', 'ADVANTAGEOUS']
-},
-{
-    word: 'HEALTHY',
-    synonyms: ['FIT', 'WELL', 'ROBUST', 'VIGOROUS', 'STRONG']
-},
-{
-    word: 'SICK',
-    synonyms: ['ILL', 'UNWELL', 'INFIRM', 'DISEASED', 'WEAK']
-},
-{
-    word: 'LUXURIOUS',
-    synonyms: ['OPULENT', 'ELEGANT', 'LAVISH', 'SUMPTUOUS', 'PLUSH']
-},
-{
-    word: 'ORDINARY',
-    synonyms: ['COMMON', 'REGULAR', 'PLAIN', 'UNREMARKABLE', 'NORMAL']
-},
-{
-    word: 'UNIQUE',
-    synonyms: ['SPECIAL', 'RARE', 'EXCEPTIONAL', 'ONE-OF-A-KIND', 'DISTINCTIVE']
-},
-{
-    word: 'FASTIDIOUS',
-    synonyms: ['FUSSY', 'METICULOUS', 'PICKY', 'DEMANDING', 'PAINSTAKING']
-},
-{
-    word: 'DIRTY',
-    synonyms: ['FILTHY', 'SOILED', 'GRIMY', 'MUCKY', 'SULLIED']
-},
-{
-    word: 'QUIET',
-    synonyms: ['HUSHED', 'WHISPERED', 'SOFT', 'MUTED', 'SILENT']
-},
-{
-    word: 'DANGEROUS',
-    synonyms: ['PERILOUS', 'HAZARDOUS', 'RISKY', 'TREACHEROUS', 'DEADLY']
-},
-{
-    word: 'SAFE',
-    synonyms: ['SECURE', 'PROTECTED', 'SHIELDED', 'GUARDED', 'UNHARMED']
-},
-{
-    word: 'COMPASSIONATE',
-    synonyms: ['KINDHEARTED', 'SYMPATHETIC', 'UNDERSTANDING', 'CARING', 'HUMANE']
-},
-{
-    word: 'POLITE',
-    synonyms: ['COURTEOUS', 'RESPECTFUL', 'WELL-MANNERED', 'GRACIOUS', 'CORDIAL']
-},
-{
-    word: 'LONELY',
-    synonyms: ['ISOLATED', 'SOLITARY', 'DESOLATE', 'FORLORN', 'ABANDONED']
-},
-{
-    word: 'CURIOUS',
-    synonyms: ['INQUISITIVE', 'EAGER', 'QUESTIONING', 'PROBING', 'INTERESTED']
-},
-{
-    word: 'DELICIOUS',
-    synonyms: ['TASTY', 'FLAVORFUL', 'SAVORY', 'SCRUMPTIOUS', 'APPETIZING']
-},
-{
-    word: 'STRONG-WILLED',
-    synonyms: ['DETERMINED', 'RESOLUTE', 'UNYIELDING', 'STEADFAST', 'STUBBORN']
-},
-{
-    word: 'FLEXIBLE',
-    synonyms: ['ADAPTABLE', 'SUPPLE', 'ELASTIC', 'MALLEABLE', 'BENDABLE']
-},
-{
-    word: 'BRIEF',
-    synonyms: ['SHORT', 'CONCISE', 'SUCCINCT', 'ABRIDGED', 'TERSE']
-},
-{
-    word: 'BRILLIANT',
-    synonyms: ['GENIUS', 'INSPIRED', 'MASTERFUL', 'EXCEPTIONAL', 'VISIONARY']
-},
-{
-    word: 'CHAOTIC',
-    synonyms: ['DISORDERED', 'TUMULTUOUS', 'ANARCHIC', 'WILD', 'UNPREDICTABLE']
-},
-{
-    word: 'AWKWARD',
-    synonyms: ['CLUMSY', 'UNGRACEFUL', 'INELEGANT', 'UNCOMFORTABLE', 'BLUNDERING']
-},
-{
-    word: 'CHEERFUL',
-    synonyms: ['HAPPY-GO-LUCKY', 'UPLIFTING', 'BUOYANT', 'JOVIAL', 'EXUBERANT']
-},
-{
-    word: 'DECEPTIVE',
-    synonyms: ['MISLEADING', 'TRICKY', 'ILLUSIVE', 'FRAUDULENT', 'DISHONEST']
-},
-{
-    word: 'ENERGETIC',
-    synonyms: ['VIGOROUS', 'SPIRITED', 'ZESTFUL', 'ANIMATED', 'PEPPY']
-},
-{
-    word: 'GROTESQUE',
-    synonyms: ['HIDEOUS', 'DISTORTED', 'BIZARRE', 'GRUESOME', 'MACABRE']
-},
-{
-    word: 'HEAVENLY',
-    synonyms: ['DIVINE', 'BLISSFUL', 'SERAPHIC', 'PARADISIACAL', 'CELESTIAL']
-},
-{
-    word: 'PLAYFUL',
-    synonyms: ['WHIMSICAL', 'JOKING', 'MISCHIEVOUS', 'LIGHTHEARTED', 'FRISKY']
-},
-{
-    word: 'ROUGH',
-    synonyms: ['COARSE', 'JAGGED', 'RUGGED', 'HARSH', 'SCRATCHY']
-},
-{
-    word: 'PEPPERY',
-    synonyms: ['SPICY', 'PUNGENT', 'ZESTY', 'FIERY', 'FLAVORED']
-},
-{
-    word: 'COLOSSAL',
-    synonyms: ['IMMENSE', 'TITANIC', 'MASSIVE', 'GIGANTIC', 'MONSTROUS']
-},
-{
-    word: 'SHINY',
-    synonyms: ['GLEAMING', 'POLISHED', 'GLITTERING', 'SPARKLING', 'SHIMMERING']
-},
-{
-    word: 'FOREST',
-    synonyms: ['WOODLAND', 'JUNGLE', 'THICKET', 'GROVE', 'BOSK']
-},
-{
-    word: 'RIVER',
-    synonyms: ['STREAM', 'BROOK', 'CREEK', 'WATERWAY', 'CURRENT']
-},
-{
-    word: 'MOUNTAIN',
-    synonyms: ['PEAK', 'SUMMIT', 'RIDGE', 'ALP', 'HIGHLAND']
-},
-{
-    word: 'OCEAN',
-    synonyms: ['SEA', 'MARINE', 'WATERS', 'ABYSS', 'DEEP']
-},
-{
-    word: 'DESERT',
-    synonyms: ['DUNES', 'ARID ZONE', 'SANDS', 'WASTELAND', 'BARRON']
-},
-{
-    word: 'WIND',
-    synonyms: ['BREEZE', 'GUST', 'GALE', 'DRAFT', 'CURRENT']
-},
-{
-    word: 'FLOWER',
-    synonyms: ['BLOOM', 'BLOSSOM', 'PETAL', 'FLORA', 'FROND']
-},
-{
-    word: 'TREE',
-    synonyms: ['SAPLING', 'OAK', 'CEDAR', 'PINE', 'TIMBER']
-},
-{
-    word: 'RAIN',
-    synonyms: ['DRIZZLE', 'DOWNPOUR', 'SHOWER', 'PRECIPITATION', 'MIST']
-},
-{
-    word: 'SUN',
-    synonyms: ['STAR', 'SUNSHINE', 'SOLAR', 'DAYSTAR', 'RAYS']
-},
-{
-    word: 'ROCK',
-    synonyms: ['STONE', 'BOULDER', 'PEBBLE', 'CRAG', 'CLIFF']
-},
-{
-    word: 'CLOUD',
-    synonyms: ['PUFF', 'MIST', 'FOG', 'CUMULUS', 'OVERCAST']
-},
-{
-    word: 'EARTH',
-    synonyms: ['SOIL', 'GROUND', 'LAND', 'TERRAIN', 'DIRT']
-},
-{
-    word: 'VALLEY',
-    synonyms: ['GLEN', 'DALE', 'HOLLOW', 'BASIN', 'DELL']
-},
-{
-    word: 'ISLAND',
-    synonyms: ['ATOLL', 'CAY', 'ISLET', 'ARCHIPELAGO', 'REFUGE']
-},
-{
-    word: 'SNOW',
-    synonyms: ['FROST', 'FLURRIES', 'ICE', 'BLIZZARD', 'SLEET']
-},
-{
-    word: 'CAVE',
-    synonyms: ['GROTTO', 'CAVERN', 'HOLLOW', 'DEN', 'TUNNEL']
-},
-{
-    word: 'BEACH',
-    synonyms: ['SHORE', 'COASTLINE', 'STRAND', 'SEASHORE', 'SAND']
-},
-{
-    word: 'MEADOW',
-    synonyms: ['FIELD', 'PASTURE', 'GRASSLAND', 'PRAIRIE', 'GLADE']
-},
-{
-    word: 'VOLCANO',
-    synonyms: ['CRATER', 'VENT', 'CALDERA', 'MOUNTAIN', 'ERUPTION']
-},
-{
-    word: 'BALANCED',
-    synonyms: ['STABLE', 'EVEN', 'EQUITABLE', 'PROPORTIONAL', 'FAIR']
-},
-{
-    word: 'TRANSPARENT',
-    synonyms: ['CLEAR', 'VISIBLE', 'CRYSTALLINE', 'PERCIPIENT', 'OBVIOUS']
-},
-{
-    word: 'GRANULAR',
-    synonyms: ['TEXTURED', 'ROUGH', 'COARSE', 'PARTICULATE', 'GRAINY']
-},
-{
-    word: 'FICKLE',
-    synonyms: ['CHANGEABLE', 'INCONSISTENT', 'ERRATIC', 'VARIABLE', 'CAPRICIOUS']
-},
-{
-    word: 'EFFICIENT',
-    synonyms: ['PRODUCTIVE', 'EFFECTIVE', 'RESOURCEFUL', 'ORGANIZED', 'PRACTICAL']
-},
-{
-    word: 'BOLD',
-    synonyms: ['AUDACIOUS', 'COURAGEOUS', 'FEARLESS', 'DAUNTLESS', 'DEFIANT']
-},
-{
-    word: 'STABLE',
-    synonyms: ['SECURE', 'STATIONARY', 'UNSHAKEABLE', 'CONSTANT', 'STEADY']
-},
-{
-    word: 'DYNAMIC',
-    synonyms: ['ENERGETIC', 'ACTIVE', 'VIBRANT', 'PROGRESSIVE', 'MOTIVATED']
-},
-{
-    word: 'PRISTINE',
-    synonyms: ['UNSPOILED', 'IMMACULATE', 'UNTOUCHED', 'CLEAN', 'PURE']
-},
-{
-    word: 'SUBTLE',
-    synonyms: ['FAINT', 'DELICATE', 'UNDERSTATED', 'REFINED', 'INCONSPICUOUS']
-},
-{
-    word: 'AGILE',
-    synonyms: ['NIMBLE', 'SWIFT', 'FLEET', 'SUPPLE', 'GRACEFUL']
-},
-{
-    word: 'CRISP',
-    synonyms: ['FRESH', 'SNAPPY', 'SHARP', 'VIVID', 'CLEAR-CUT']
-},
-{
-    word: 'LAVISH',
-    synonyms: ['OPULENT', 'SUMPTUOUS', 'LUXURIOUS', 'EXTRAVAGANT', 'PLENTIFUL']
-},
-{
-    word: 'SPARSE',
-    synonyms: ['SCARCE', 'THIN', 'MEAGER', 'SCATTERED', 'UNPLENTIFUL']
-},
-{
-    word: 'LURID',
-    synonyms: ['SHOCKING', 'SENSATIONAL', 'GRISLY', 'GARISH', 'VIVID']
-},
-{
-    word: 'VIBRANT',
-    synonyms: ['LIVELY', 'COLORFUL', 'DYNAMIC', 'RADIANT', 'ENERGETIC']
-},
-{
-    word: 'STURDY',
-    synonyms: ['SOLID', 'TOUGH', 'STRONG', 'DURABLE', 'RESILIENT']
-},
-{
-    word: 'SLIPPERY',
-    synonyms: ['SLICK', 'GREASY', 'SLIDING', 'SMOOTH', 'GLOSSY']
-},
-{
-    word: 'TANGY',
-    synonyms: ['ZESTY', 'SHARP', 'PIQUANT', 'SPICY', 'TART']
-},
-{
-    word: 'PUNGENT',
-    synonyms: ['STRONG', 'ACRID', 'SHARP', 'BITING', 'OVERPOWERING']
-},
-{
-    word: 'BLAND',
-    synonyms: ['TASTELESS', 'FLAVORLESS', 'INSIPID', 'DULL', 'UNINTERESTING']
-},
-{
-    word: 'GENTLE',
-    synonyms: ['MILD', 'SOFT', 'TENDER', 'CALM', 'SOOTHING']
-},
-{
-    word: 'STEADFAST',
-    synonyms: ['LOYAL', 'RESOLUTE', 'UNWAVERING', 'FAITHFUL', 'COMMITTED']
-},
-{
-    word: 'LUCID',
-    synonyms: ['CLEAR', 'INTELLIGIBLE', 'COHERENT', 'RATIONAL', 'TRANSPARENT']
-},
-{
-    word: 'STRETCHED',
-    synonyms: ['EXTENDED', 'ELONGATED', 'PULLED', 'EXPANDED', 'OUTSTRETCHED']
-},
-{
-    word: 'WRETCHED',
-    synonyms: ['MISERABLE', 'PITIFUL', 'UNHAPPY', 'DEPLORABLE', 'UNFORTUNATE']
-},
-{
-    word: 'GLOSSY',
-    synonyms: ['SHINY', 'POLISHED', 'LUSTROUS', 'SLEEK', 'REFLECTIVE']
-},
-{
-    word: 'TEDIOUS',
-    synonyms: ['BORING', 'MONOTONOUS', 'TIRESOME', 'DULL', 'REPETITIVE']
-},
-{
-    word: 'BULKY',
-    synonyms: ['HEAVY', 'MASSIVE', 'CLUNKY', 'OVERSIZED', 'THICK']
-},
-{
-    word: 'FLUFFY',
-    synonyms: ['SOFT', 'PUFFY', 'AIRY', 'CUSHIONY', 'LIGHT']
-},
-{
-    word: 'BREEZY',
-    synonyms: ['WINDY', 'AIRY', 'GUSTY', 'BRISK', 'CHILLY']
-},
-{
-    word: 'OVERCAST',
-    synonyms: ['CLOUDY', 'GLOOMY', 'GRAY', 'DIM', 'SHADOWY']
-},
-{
-    word: 'FRIGID',
-    synonyms: ['FREEZING', 'BITTER', 'ICY', 'CHILLY', 'COLD']
-},
-{
-    word: 'SWELTERING',
-    synonyms: ['HOT', 'BOILING', 'SCORCHING', 'STIFLING', 'SULTRY']
-},
-{
-    word: 'MUGGY',
-    synonyms: ['HUMID', 'STICKY', 'DAMP', 'SWELTERING', 'CLOSE']
-},
-{
-    word: 'BLUSTERY',
-    synonyms: ['WINDY', 'STORMY', 'GUSTY', 'TEMPESTUOUS', 'BOISTEROUS']
-},
-{
-    word: 'FOGGY',
-    synonyms: ['MISTY', 'HAZY', 'OBSCURED', 'CLOUDY', 'VAPOROUS']
-},
-{
-    word: 'DRIZZLY',
-    synonyms: ['SHOWERY', 'WET', 'RAINY', 'MISTY', 'DAMP']
-},
-{
-    word: 'SUNNY',
-    synonyms: ['BRIGHT', 'RADIANT', 'CLEAR', 'SHINING', 'BEAMING']
-},
-{
-    word: 'STORMY',
-    synonyms: ['TEMPESTUOUS', 'VIOLENT', 'WINDY', 'BLUSTERY', 'WILD']
-},
-{
-    word: 'ARID',
-    synonyms: ['DRY', 'PARCHED', 'DESERTLIKE', 'BARREN', 'WATERLESS']
-},
-{
-    word: 'ICY',
-    synonyms: ['FROSTY', 'GLACIAL', 'COLD', 'FREEZING', 'CHILLY']
-},
-{
-    word: 'TEMPERATE',
-    synonyms: ['MILD', 'MODERATE', 'PLEASANT', 'BALMY', 'CLEMENT']
-},
-{
-    word: 'SOGGY',
-    synonyms: ['DRENCHED', 'WATERLOGGED', 'SOAKED', 'DAMP', 'SATURATED']
-},
-{
-    word: 'GUSTY',
-    synonyms: ['WINDY', 'BREEZY', 'BLUSTERY', 'AIRY', 'TEMPESTUOUS']
-},
-{
-    word: 'LEARN',
-    synonyms: ['STUDY', 'ABSORB', 'UNDERSTAND', 'COMPREHEND', 'MASTER']
-},
-{
-    word: 'TEACH',
-    synonyms: ['INSTRUCT', 'EDUCATE', 'TRAIN', 'COACH', 'TUTOR']
-},
-{
-    word: 'EXAM',
-    synonyms: ['TEST', 'ASSESSMENT', 'QUIZ', 'EVALUATION', 'CHECK']
-},
-{
-    word: 'CLASSROOM',
-    synonyms: ['LECTURE HALL', 'STUDY ROOM', 'LEARNING SPACE', 'SCHOOLROOM', 'HOMEROOM']
-},
-{
-    word: 'STUDENT',
-    synonyms: ['LEARNER', 'PUPIL', 'SCHOLAR', 'TRAINEE', 'APPRENTICE']
-},
-{
-    word: 'TEACHER',
-    synonyms: ['INSTRUCTOR', 'EDUCATOR', 'PROFESSOR', 'MENTOR', 'GUIDE']
-},
-{
-    word: 'ASSIGNMENT',
-    synonyms: ['TASK', 'PROJECT', 'HOMEWORK', 'DUTY', 'EXERCISE']
-},
-{
-    word: 'GRADUATE',
-    synonyms: ['ALUMNUS', 'FINISHER', 'COMPLETER', 'SCHOLAR', 'POSTGRADUATE']
-},
-{
-    word: 'LECTURE',
-    synonyms: ['TALK', 'PRESENTATION', 'SEMINAR', 'ADDRESS', 'DISCUSSION']
-},
-{
-    word: 'LIBRARY',
-    synonyms: ['BOOKSTACKS', 'RESOURCE CENTER', 'READING ROOM', 'ARCHIVE', 'STUDY HALL']
-},
-{
-    word: 'SYLLABUS',
-    synonyms: ['CURRICULUM', 'OUTLINE', 'PROGRAM', 'PLAN', 'SCHEDULE']
-},
-{
-    word: 'RESEARCH',
-    synonyms: ['INVESTIGATION', 'STUDY', 'ANALYSIS', 'EXPLORATION', 'INQUIRY']
-},
-{
-    word: 'GRADE',
-    synonyms: ['MARK', 'SCORE', 'RANKING', 'RATING', 'EVALUATION']
-},
-{
-    word: 'TEXTBOOK',
-    synonyms: ['MANUAL', 'HANDBOOK', 'COURSEBOOK', 'GUIDE', 'REFERENCE']
-},
-{
-    word: 'QUIZ',
-    synonyms: ['TEST', 'EXAM', 'ASSESSMENT', 'QUESTIONNAIRE', 'EVALUATION']
-},
-{
-    word: 'ATHLETE',
-    synonyms: ['SPORTSPERSON', 'COMPETITOR', 'PLAYER', 'RUNNER', 'PERFORMER']
-},
-{
-    word: 'GAME',
-    synonyms: ['MATCH', 'CONTEST', 'COMPETITION', 'TOURNAMENT', 'PLAY']
-},
-{
-    word: 'SCORE',
-    synonyms: ['POINTS', 'RESULT', 'TALLY', 'MARK', 'RANK']
-},
-{
-    word: 'COACH',
-    synonyms: ['TRAINER', 'MENTOR', 'INSTRUCTOR', 'MANAGER', 'GUIDE']
-},
-{
-    word: 'TEAM',
-    synonyms: ['SQUAD', 'CREW', 'UNIT', 'GROUP', 'LINEUP']
-},
-{
-    word: 'STADIUM',
-    synonyms: ['ARENA', 'FIELD', 'VENUE', 'COLISEUM', 'GROUND']
-},
-{
-    word: 'GOAL',
-    synonyms: ['TARGET', 'OBJECTIVE', 'AIM', 'PURPOSE', 'POINT']
-},
-{
-    word: 'TOURNAMENT',
-    synonyms: ['COMPETITION', 'CHAMPIONSHIP', 'CONTEST', 'SERIES', 'EVENT']
-},
-{
-    word: 'VICTORY',
-    synonyms: ['WIN', 'TRIUMPH', 'SUCCESS', 'ACHIEVEMENT', 'CONQUEST']
-},
-{
-    word: 'DEFENSE',
-    synonyms: ['GUARD', 'PROTECTION', 'BLOCKING', 'RESISTANCE', 'SHIELD']
-},
-{
-    word: 'OFFENSE',
-    synonyms: ['ATTACK', 'AGGRESSION', 'STRATEGY', 'CHARGE', 'ADVANCE']
-},
-{
-    word: 'MEDAL',
-    synonyms: ['AWARD', 'TROPHY', 'PRIZE', 'BADGE', 'HONOR']
-},
-{
-    word: 'PRACTICE',
-    synonyms: ['TRAINING', 'DRILLS', 'EXERCISE', 'REHEARSAL', 'PREPARATION']
-},
-{
-    word: 'RUNNER',
-    synonyms: ['SPRINTER', 'ATHLETE', 'COMPETITOR', 'MARATHONER', 'RACER']
-},
-{
-    word: 'CHAMPION',
-    synonyms: ['WINNER', 'TITLEHOLDER', 'VICTOR', 'LEADER', 'CONQUEROR']
-},
-{
-    word: 'REFEREE',
-    synonyms: ['UMPIRE', 'JUDGE', 'OFFICIAL', 'ARBITRATOR', 'MEDIATOR']
-},
-{
-    word: 'SPECTATOR',
-    synonyms: ['AUDIENCE', 'FAN', 'VIEWER', 'OBSERVER', 'WATCHER']
-},
-{
-    word: 'MATCH',
-    synonyms: ['GAME', 'CONTEST', 'COMPETITION', 'EVENT', 'SHOWDOWN']
-},
-{
-    word: 'CHAMPIONSHIP',
-    synonyms: ['FINALS', 'TOURNAMENT', 'CONTEST', 'VICTORY', 'TITLE']
-},
-{
-    word: 'FIELD',
-    synonyms: ['PITCH', 'GROUND', 'ARENA', 'STADIUM', 'COURT']
-},
-{
-    word: 'PLAYER',
-    synonyms: ['ATHLETE', 'COMPETITOR', 'PARTICIPANT', 'PERFORMER', 'SPORTSPERSON']
-},
-{
-    word: 'RACE',
-    synonyms: ['CONTEST', 'MARATHON', 'SPRINT', 'COMPETITION', 'RUN']
-},
-{
-    word: 'SKILL',
-    synonyms: ['ABILITY', 'TALENT', 'EXPERTISE', 'PROFICIENCY', 'KNACK']
-},
-{
-    word: 'SPEED',
-    synonyms: ['PACE', 'VELOCITY', 'QUICKNESS', 'RAPIDITY', 'SWIFTNESS']
-},
-{
-    word: 'TROPHY',
-    synonyms: ['AWARD', 'PRIZE', 'MEDAL', 'TITLE', 'HONOR']
-},
-{
-    word: 'DRILL',
-    synonyms: ['PRACTICE', 'EXERCISE', 'TRAINING', 'WARM-UP', 'PREPARATION']
-},
-{
-    word: 'STRATEGY',
-    synonyms: ['PLAN', 'TACTIC', 'SCHEME', 'APPROACH', 'GAMEPLAN']
-},
-{
-    word: 'LEAGUE',
-    synonyms: ['DIVISION', 'ASSOCIATION', 'CONFERENCE', 'FEDERATION', 'ALLIANCE']
-},
-{
-    word: 'COMPETITION',
-    synonyms: ['TOURNAMENT', 'CONTEST', 'MATCH', 'EVENT', 'SHOWDOWN']
-},
-{
-    word: 'VICTORY',
-    synonyms: ['WIN', 'TRIUMPH', 'SUCCESS', 'ACHIEVEMENT', 'GLORY']
-},
-{
-    word: 'SPELL',
-    synonyms: ['INCANTATION', 'CHARM', 'ENCHANTMENT', 'HEX', 'MAGIC']
-},
-{
-    word: 'WAND',
-    synonyms: ['STAFF', 'ROD', 'BATON', 'SCEPTER', 'SWITCH']
-},
-{
-    word: 'POTION',
-    synonyms: ['BREW', 'ELIXIR', 'TONIC', 'CONCOCTION', 'SERUM']
-},
-{
-    word: 'SORCERER',
-    synonyms: ['MAGICIAN', 'WIZARD', 'WARLOCK', 'CONJURER', 'ENCHANTER']
-},
-{
-    word: 'WITCH',
-    synonyms: ['SORCERESS', 'SPELLCASTER', 'ENCHANTRESS', 'CRONE', 'CHARMER']
-},
-{
-    word: 'CURSE',
-    synonyms: ['HEX', 'JINX', 'SPELL', 'BLIGHT', 'MALEDICTION']
-},
-{
-    word: 'RITUAL',
-    synonyms: ['CEREMONY', 'RITE', 'TRADITION', 'OBSERVANCE', 'PRACTICE']
-},
-{
-    word: 'MAGIC',
-    synonyms: ['SORCERY', 'ENCHANTMENT', 'WITCHCRAFT', 'ALCHEMY', 'MYSTICISM']
-},
-{
-    word: 'MYSTIC',
-    synonyms: ['SEER', 'PROPHET', 'VISIONARY', 'PSYCHIC', 'ORACLE']
-},
-{
-    word: 'CHARM',
-    synonyms: ['TALISMAN', 'AMULET', 'SPELL', 'ENCHANTMENT', 'TOKEN']
-},
-{
-    word: 'FAMILIAR',
-    synonyms: ['SPIRIT', 'GUARDIAN', 'COMPANION', 'ALLY', 'PROTECTOR']
-},
-{
-    word: 'SHIMMER',
-    synonyms: ['GLEAM', 'GLIMMER', 'SPARKLE', 'TWINKLE', 'GLINT']
-},
-{
-    word: 'ILLUSION',
-    synonyms: ['MIRAGE', 'TRICK', 'DECEPTION', 'FANTASY', 'HALLUCINATION']
-},
-{
-    word: 'ALCHEMY',
-    synonyms: ['TRANSMUTATION', 'CHEMISTRY', 'PHILOSOPHY', 'MAGIC', 'MYSTICISM']
-},
-{
-    word: 'SPELLBOOK',
-    synonyms: ['GRIMOIRE', 'TOME', 'MANUAL', 'MAGICAL BOOK', 'ENCHANTER’S GUIDE']
-},
-{
-    word: 'ROOF',
-    synonyms: ['CEILING', 'COVERING', 'OVERHANG', 'CANOPY', 'TOP']
-},
-{
-    word: 'WINDOW',
-    synonyms: ['PANE', 'GLASS', 'CASEMENT', 'PORTAL', 'FRAME']
-},
-{
-    word: 'DOOR',
-    synonyms: ['ENTRANCE', 'GATEWAY', 'PORTAL', 'THRESHOLD', 'HATCH']
-},
-{
-    word: 'KITCHEN',
-    synonyms: ['COOKHOUSE', 'GALLEY', 'PANTRY', 'COOKING AREA', 'CULINARY SPACE']
-},
-{
-    word: 'BEDROOM',
-    synonyms: ['CHAMBER', 'SLEEPING QUARTERS', 'SUITE', 'LOFT', 'BOUDOIR']
-},
-{
-    word: 'LIVING ROOM',
-    synonyms: ['LOUNGE', 'SITTING ROOM', 'PARLOR', 'FAMILY ROOM', 'DEN']
-},
-{
-    word: 'FLOOR',
-    synonyms: ['GROUND', 'LEVEL', 'STAGE', 'DECK', 'PLATFORM']
-},
-{
-    word: 'WALL',
-    synonyms: ['PARTITION', 'BARRIER', 'DIVIDER', 'ENCLOSURE', 'PANEL']
-},
-{
-    word: 'STAIRS',
-    synonyms: ['STEPS', 'STAIRCASE', 'ESCALATOR', 'RISERS', 'LADDER']
-},
-{
-    word: 'BALCONY',
-    synonyms: ['TERRACE', 'VERANDA', 'PORCH', 'DECK', 'PLATFORM']
-},
-{
-    word: 'FIREPLACE',
-    synonyms: ['HEARTH', 'CHIMNEY', 'MANTEL', 'STOVE', 'FIREPIT']
-},
-{
-    word: 'ATTIC',
-    synonyms: ['LOFT', 'GARRET', 'UPPER STORY', 'CRAWL SPACE', 'STORAGE AREA']
-},
-{
-    word: 'BASEMENT',
-    synonyms: ['CELLAR', 'UNDERCROFT', 'VAULT', 'LOWER LEVEL', 'FOUNDATION']
-},
-{
-    word: 'GARDEN',
-    synonyms: ['YARD', 'LAWN', 'BACKYARD', 'ORCHARD', 'PLOT']
-},
-{
-    word: 'FURNITURE',
-    synonyms: ['CHAIRS', 'TABLES', 'FIXTURES', 'CABINETRY', 'DECOR']
-},
-{
-    word: 'FRUIT',
-    synonyms: ['BERRIES', 'CITRUS', 'PRODUCE', 'MELON', 'DRUPE']
-},
-{
-    word: 'VEGETABLE',
-    synonyms: ['GREENS', 'ROOTS', 'LEGUMES', 'PLANTS', 'CRUCIFEROUS']
-},
-{
-    word: 'MEAT',
-    synonyms: ['PROTEIN', 'BEEF', 'POULTRY', 'SEAFOOD', 'LAMB']
-},
-{
-    word: 'DESSERT',
-    synonyms: ['SWEET', 'PASTRY', 'CAKE', 'TREAT', 'CONFECTION']
-},
-{
-    word: 'SNACK',
-    synonyms: ['BITE', 'APPETIZER', 'NIBBLE', 'TREAT', 'MUNCHIES']
-},
-{
-    word: 'BREAD',
-    synonyms: ['LOAF', 'ROLL', 'BUN', 'PASTRY', 'TOAST']
-},
-{
-    word: 'SOUP',
-    synonyms: ['BROTH', 'STEW', 'CHOWDER', 'CONSOMMÉ', 'BISQUE']
-},
-{
-    word: 'SPICE',
-    synonyms: ['HERB', 'FLAVORING', 'SEASONING', 'CONDIMENT', 'EXTRACT']
-},
-{
-    word: 'CHEESE',
-    synonyms: ['DAIRY', 'CHEDDAR', 'BRIE', 'MOZZARELLA', 'GOUDA']
-},
-{
-    word: 'DRINK',
-    synonyms: ['BEVERAGE', 'REFRESHMENT', 'LIQUID', 'BREW', 'ELIXIR']
-},
-{
-    word: 'PASTA',
-    synonyms: ['NOODLES', 'SPAGHETTI', 'RAVIOLI', 'MACARONI', 'FETTUCCINE']
-},
-{
-    word: 'SAUCE',
-    synonyms: ['DRESSING', 'CONDIMENT', 'GRAVY', 'DIP', 'TOPPING']
-},
-{
-    word: 'SALAD',
-    synonyms: ['GREENS', 'MIX', 'SIDE DISH', 'BOWL', 'VEGGIE DISH']
-},
-{
-    word: 'ICE CREAM',
-    synonyms: ['FROZEN DESSERT', 'SORBET', 'GELATO', 'FROYO', 'DAIRY TREAT']
-},
-{
-    word: 'BEAN',
-    synonyms: ['LEGUME', 'PULSE', 'SOYBEAN', 'CHICKPEA', 'LENTIL']
-},
-{
-    word: 'JOURNEY',
-    synonyms: ['VOYAGE', 'EXPEDITION', 'TRIP', 'ADVENTURE', 'ODYSSEY']
-},
-{
-    word: 'DESTINATION',
-    synonyms: ['LOCATION', 'SPOT', 'GOAL', 'PLACE', 'STOP']
-},
-{
-    word: 'LUGGAGE',
-    synonyms: ['BAGGAGE', 'SUITCASE', 'BAGS', 'PACKS', 'CARRY-ONS']
-},
-{
-    word: 'AIRPORT',
-    synonyms: ['TERMINAL', 'RUNWAY', 'AIRFIELD', 'HUB', 'AVIATION CENTER']
-},
-{
-    word: 'TICKET',
-    synonyms: ['PASS', 'VOUCHER', 'ADMISSION', 'FARE', 'RESERVATION']
-},
-{
-    word: 'ITINERARY',
-    synonyms: ['SCHEDULE', 'PLAN', 'ROUTE', 'AGENDA', 'TRAVEL GUIDE']
-},
-{
-    word: 'PASSPORT',
-    synonyms: ['ID', 'TRAVEL DOCUMENT', 'VISA', 'CREDENTIALS', 'IDENTIFICATION']
-},
-{
-    word: 'TOUR',
-    synonyms: ['EXCURSION', 'TRIP', 'VOYAGE', 'JOURNEY', 'EXPEDITION']
-},
-{
-    word: 'HOTEL',
-    synonyms: ['INN', 'RESORT', 'LODGING', 'MOTEL', 'ACCOMMODATION']
-},
-{
-    word: 'VACATION',
-    synonyms: ['HOLIDAY', 'TRIP', 'GETAWAY', 'BREAK', 'ESCAPE']
-},
-{
-    word: 'CRUISE',
-    synonyms: ['VOYAGE', 'SAILING', 'EXPEDITION', 'SEA TRIP', 'BOATING']
-},
-{
-    word: 'GUIDE',
-    synonyms: ['ESCORT', 'LEADER', 'DIRECTOR', 'NAVIGATOR', 'TOUR LEADER']
-},
-{
-    word: 'MAP',
-    synonyms: ['CHART', 'DIAGRAM', 'BLUEPRINT', 'ATLAS', 'LAYOUT']
-},
-{
-    word: 'CAMPING',
-    synonyms: ['OUTDOOR STAY', 'TENTING', 'BACKPACKING', 'GLAMPING', 'TREKKING']
-},
-{
-    word: 'TRANSPORTATION',
-    synonyms: ['TRAVEL', 'CONVEYANCE', 'TRANSIT', 'MOVEMENT', 'SHUTTLE']
+  {
+      word: 'HAPPY',
+      synonyms: ['JOYFUL', 'CHEERFUL', 'MERRY', 'GLAD', 'DELIGHTED', 'PLEASED', 'ELATED', 'JUBILANT', 'BLISSFUL', 'CONTENT']
+  },
+  {
+      word: 'SMART',
+      synonyms: ['CLEVER', 'INTELLIGENT', 'BRIGHT', 'WISE', 'SHARP', 'BRILLIANT', 'ASTUTE', 'GIFTED', 'QUICK', 'KEEN']
+  },
+  {
+      word: 'STRONG',
+      synonyms: ['POWERFUL', 'MIGHTY', 'ROBUST', 'TOUGH', 'STURDY', 'SOLID', 'FIRM', 'MUSCULAR', 'HARDY', 'FORCEFUL']
+  },
+  {
+    word: 'CHAIR',
+    synonyms: ['SEAT', 'STOOL', 'BENCH', 'THRONE', 'RECLINER', 'ARMCHAIR']
+},
+{
+    word: 'CAR',
+    synonyms: ['VEHICLE', 'AUTOMOBILE', 'RIDE', 'WHEELS', 'MOTORCAR']
+},
+{
+    word: 'DOG',
+    synonyms: ['CANINE', 'PUP', 'POOCH', 'HOUND', 'MUTT']
+},
+{
+    word: 'HOUSE',
+    synonyms: ['HOME', 'RESIDENCE', 'ABODE', 'DWELLING', 'LODGE', 'COTTAGE', 'APARTMENT']
 },
 {
     word: 'COMPUTER',
-    synonyms: ['PC', 'LAPTOP', 'WORKSTATION', 'DEVICE', 'MACHINE']
+    synonyms: ['PC', 'LAPTOP', 'DESKTOP', 'MACHINE', 'DEVICE', 'SYSTEM']
 },
 {
-    word: 'SOFTWARE',
-    synonyms: ['PROGRAM', 'APPLICATION', 'PLATFORM', 'TOOL', 'SYSTEM']
+    word: 'PHONE',
+    synonyms: ['MOBILE', 'CELL', 'SMARTPHONE', 'HANDSET', 'DEVICE']
 },
 {
-    word: 'HARDWARE',
-    synonyms: ['EQUIPMENT', 'COMPONENTS', 'MACHINERY', 'DEVICES', 'TOOLS']
+    word: 'BOOK',
+    synonyms: ['NOVEL', 'VOLUME', 'TEXT', 'MANUSCRIPT', 'PUBLICATION']
 },
 {
-    word: 'NETWORK',
-    synonyms: ['SYSTEM', 'WEB', 'GRID', 'CONNECTIONS', 'INFRASTRUCTURE']
+    word: 'COFFEE',
+    synonyms: ['BREW', 'JAVA', 'ESPRESSO', 'LATTE', 'MOCHA', 'CAFFEINE']
 },
 {
-    word: 'DATABASE',
-    synonyms: ['REPOSITORY', 'STORAGE', 'ARCHIVE', 'SYSTEM', 'COLLECTION']
+    word: 'BAG',
+    synonyms: ['SACK', 'PURSE', 'BACKPACK', 'TOTE', 'CARRIER']
 },
 {
-    word: 'ALGORITHM',
-    synonyms: ['PROCESS', 'FORMULA', 'SEQUENCE', 'LOGIC', 'METHOD']
+    word: 'BICYCLE',
+    synonyms: ['BIKE', 'CYCLE', 'TWO-WHEELER', 'VELO']
 },
 {
-    word: 'PROGRAMMER',
-    synonyms: ['DEVELOPER', 'CODER', 'ENGINEER', 'TECHNICIAN', 'SOFTWARE SPECIALIST']
+    word: 'TREE',
+    synonyms: ['OAK', 'PINE', 'PLANT', 'SAPLING', 'FIR', 'PALM']
 },
 {
-    word: 'ROBOT',
-    synonyms: ['AUTOMATON', 'ANDROID', 'MACHINE', 'CYBORG', 'BOT']
+    word: 'HAT',
+    synonyms: ['CAP', 'BONNET', 'FEDORA', 'BEANIE', 'BERET']
 },
 {
-    word: 'INTERNET',
-    synonyms: ['WEB', 'ONLINE', 'CYBERSPACE', 'NETWORK', 'DIGITAL REALM']
+    word: 'SHOES',
+    synonyms: ['SNEAKERS', 'BOOTS', 'FOOTWEAR', 'LOAFERS', 'SANDALS']
 },
 {
-    word: 'AI',
-    synonyms: ['ARTIFICIAL INTELLIGENCE', 'MACHINE LEARNING', 'AUTOMATION', 'NEURAL NETWORKS', 'SMART SYSTEMS']
+    word: 'TABLE',
+    synonyms: ['DESK', 'BENCH', 'COUNTER', 'PLATFORM', 'STAND']
 },
 {
-    word: 'APP',
-    synonyms: ['APPLICATION', 'SOFTWARE', 'TOOL', 'PLATFORM', 'PROGRAM']
+    word: 'CLOCK',
+    synonyms: ['WATCH', 'TIMEPIECE', 'ALARM', 'TIMER']
 },
 {
-    word: 'CODE',
-    synonyms: ['PROGRAMMING', 'SCRIPT', 'SYNTAX', 'COMMANDS', 'LANGUAGE']
+    word: 'LIGHT',
+    synonyms: ['LAMP', 'BULB', 'FLASH', 'GLOW', 'BEAM']
 },
 {
-    word: 'CLOUD',
-    synonyms: ['STORAGE', 'HOSTING', 'VIRTUAL SPACE', 'DATA CENTER', 'ONLINE INFRASTRUCTURE']
+    word: 'FRUIT',
+    synonyms: ['BERRY', 'CITRUS', 'APPLE', 'BANANA', 'MELON']
 },
 {
-    word: 'ENCRYPTION',
-    synonyms: ['SECURITY', 'CIPHER', 'ENCODING', 'SCRAMBLING', 'PROTECTION']
+    word: 'BREAD',
+    synonyms: ['LOAF', 'ROLL', 'BUN', 'BAGUETTE', 'TOAST']
 },
 {
-    word: 'GADGET',
-    synonyms: ['DEVICE', 'TOOL', 'APPLIANCE', 'INSTRUMENT', 'TECHNOLOGY']
+    word: 'GLASSES',
+    synonyms: ['SPECTACLES', 'SHADES', 'GOGGLES', 'LENSES']
 },
 {
-    word: 'CONTROLLER',
-    synonyms: ['JOYSTICK', 'GAMEPAD', 'REMOTE', 'INPUT DEVICE', 'CONSOLE PAD']
+    word: 'PAINTING',
+    synonyms: ['ART', 'PORTRAIT', 'CANVAS', 'PICTURE', 'MURAL']
 },
 {
-    word: 'LEVEL',
-    synonyms: ['STAGE', 'PHASE', 'ZONE', 'TIER', 'RANK']
+  word: 'LAUGH',
+  synonyms: ['GIGGLE', 'CHUCKLE', 'SNICKER', 'CACKLE', 'GUFFAW', 'SMILE', 'TITTER', 'HOWL', 'ROAR', 'SNORT']
 },
 {
-    word: 'MISSION',
-    synonyms: ['QUEST', 'TASK', 'OBJECTIVE', 'GOAL', 'CHALLENGE']
+  word: 'LOVE',
+  synonyms: ['ADORE', 'CHERISH', 'TREASURE', 'PRIZE', 'VALUE', 'CARE', 'DEVOTION', 'PASSION', 'AFFECTION', 'ADMIRE']
 },
 {
-    word: 'BOSS',
-    synonyms: ['ENEMY LEADER', 'FINAL CHALLENGE', 'ARCHNEMESIS', 'VILLAIN', 'ANTAGONIST']
+  word: 'FAST',
+  synonyms: ['QUICK', 'RAPID', 'SWIFT', 'SPEEDY', 'BRISK', 'HURRIED', 'EXPEDITIOUS', 'FLEET', 'PROMPT', 'NIMBLE']
 },
 {
-    word: 'ARENA',
-    synonyms: ['BATTLEFIELD', 'STADIUM', 'ZONE', 'MAP', 'VENUE']
+  word: 'QUIET',
+  synonyms: ['SILENT', 'HUSHED', 'MUTED', 'SOFT', 'CALM', 'PEACEFUL', 'STILL', 'NOISELESS', 'MELLOW', 'SUBDUED']
 },
 {
-    word: 'SCORE',
-    synonyms: ['POINTS', 'TALLY', 'RESULT', 'MARK', 'RANK']
+  word: 'FUNNY',
+  synonyms: ['HILARIOUS', 'AMUSING', 'COMICAL', 'HUMOROUS', 'ENTERTAINING', 'WITTY', 'JOLLY', 'UPLIFTING', 'LIGHTHEARTED', 'PLAYFUL']
 },
 {
-    word: 'HERO',
-    synonyms: ['CHAMPION', 'WARRIOR', 'PROTAGONIST', 'SAVIOR', 'AVATAR']
+  word: 'EASY',
+  synonyms: ['SIMPLE', 'STRAIGHTFORWARD', 'EFFORTLESS', 'CLEAR', 'BASIC', 'SMOOTH', 'UNDemanding', 'MANAGEABLE', 'UNCOMPLICATED', 'PAINLESS']
 },
 {
-    word: 'RPG',
-    synonyms: ['ROLE-PLAYING GAME', 'FANTASY GAME', 'STRATEGY GAME', 'ADVENTURE GAME', 'CHARACTER GAME']
+  word: 'STRANGE',
+  synonyms: ['WEIRD', 'ODD', 'UNUSUAL', 'PECULIAR', 'BIZARRE', 'QUIRKY', 'ECCENTRIC', 'OUTLANDISH', 'UNCOMMON', 'FREAKY']
 },
 {
-    word: 'FPS',
-    synonyms: ['FIRST-PERSON SHOOTER', 'SHOOTER GAME', 'ACTION GAME', 'TACTICAL GAME', 'COMBAT GAME']
+  word: 'BRIGHT',
+  synonyms: ['SHINY', 'VIVID', 'LUMINOUS', 'RADIANT', 'GLOWING', 'DAZZLING', 'CLEAR', 'ILLUMINATED', 'SPARKLING', 'SHIMMERING']
 },
 {
-    word: 'POWER-UP',
-    synonyms: ['BOOST', 'BONUS', 'UPGRADE', 'PERK', 'ENHANCEMENT']
+  word: 'KIND',
+  synonyms: ['CARING', 'COMPASSIONATE', 'GENEROUS', 'THOUGHTFUL', 'SYMPATHETIC', 'BENEVOLENT', 'FRIENDLY', 'GENTLE', 'WARM', 'CONSIDERATE']
 },
 {
-    word: 'MULTIPLAYER',
-    synonyms: ['CO-OP', 'TEAM MODE', 'ONLINE MODE', 'DUAL MODE', 'GROUP PLAY']
+  word: 'BRAVE',
+  synonyms: ['COURAGEOUS', 'FEARLESS', 'VALIANT', 'HEROIC', 'GUTSY', 'BOLD', 'DAUNTLESS', 'DARING', 'ADVENTUROUS', 'STRONG']
 },
 {
-    word: 'MAP',
-    synonyms: ['TERRAIN', 'LAYOUT', 'STAGE', 'LEVEL DESIGN', 'ENVIRONMENT']
+  word: 'TIRED',
+  synonyms: ['WEARY', 'EXHAUSTED', 'SLEEPY', 'FATIGUED', 'DRAINED', 'BEAT', 'WORN', 'DROWSY', 'RUN-DOWN', 'FRAZZLED']
 },
 {
-    word: 'SKILL',
-    synonyms: ['ABILITY', 'TALENT', 'POWER', 'TECHNIQUE', 'COMPETENCE']
+  word: 'QUIRKY',
+  synonyms: ['ODD', 'UNIQUE', 'DIFFERENT', 'ECCENTRIC', 'UNUSUAL', 'PECULIAR', 'WHIMSICAL', 'UNCONVENTIONAL', 'WEIRD', 'BIZARRE']
 },
 {
-    word: 'WEAPON',
-    synonyms: ['ARM', 'TOOL', 'GEAR', 'INSTRUMENT', 'FIREARM']
+  word: 'HURRY',
+  synonyms: ['RUSH', 'HASTEN', 'SPEED', 'DASH', 'RACE', 'ZIP', 'FLY', 'HUSTLE', 'SCURRY', 'SCAMPER']
 },
 {
-    word: 'MELODY',
-    synonyms: ['TUNE', 'AIR', 'SONG', 'HARMONY', 'THEME']
+  word: 'LOVELY',
+  synonyms: ['BEAUTIFUL', 'ATTRACTIVE', 'CHARMING', 'DELIGHTFUL', 'GRACEFUL', 'PLEASANT', 'ADORABLE', 'SWEET', 'CUTE', 'ELEGANT']
 },
 {
-    word: 'RHYTHM',
-    synonyms: ['BEAT', 'TEMPO', 'CADENCE', 'PULSE', 'PATTERN']
+  word: 'SHINE',
+  synonyms: ['GLOW', 'RADIATE', 'SPARKLE', 'GLEAM', 'GLITTER', 'GLIMMER', 'FLASH', 'BEAM', 'SHIMMER', 'DAZZLE']
 },
 {
-    word: 'LYRICS',
-    synonyms: ['WORDS', 'TEXT', 'VERSES', 'STANZAS', 'LINES']
+  word: 'SAFE',
+  synonyms: ['SECURE', 'PROTECTED', 'GUARDED', 'HARMLESS', 'SHELTERED', 'RISK-FREE', 'SHIELDED', 'UNTOUCHED', 'UNDISTURBED', 'STABLE']
 },
 {
-    word: 'INSTRUMENT',
-    synonyms: ['TOOL', 'DEVICE', 'APPARATUS', 'EQUIPMENT', 'GEAR']
+  word: 'FUN',
+  synonyms: ['ENJOYABLE', 'EXCITING', 'AMUSING', 'ENTERTAINING', 'PLEASANT', 'DELIGHTFUL', 'THRILLING', 'UPBEAT', 'JOYFUL', 'HAPPY']
 },
 {
-    word: 'SONG',
-    synonyms: ['TUNE', 'PIECE', 'COMPOSITION', 'BALLAD', 'NUMBER']
+  word: 'SUN',
+  synonyms: ['STAR', 'SOLAR', 'DAYLIGHT', 'SUNSHINE', 'RAYS']
 },
 {
-    word: 'CHORD',
-    synonyms: ['TRIAD', 'HARMONY', 'ARPEGGIO', 'INTERVAL', 'NOTE GROUP']
+  word: 'MUSIC',
+  synonyms: ['SONG', 'MELODY', 'TUNE', 'HARMONY', 'BEAT', 'RHYTHM']
 },
 {
-    word: 'CONCERT',
-    synonyms: ['SHOW', 'PERFORMANCE', 'GIG', 'RECITAL', 'EVENT']
+  word: 'OCEAN',
+  synonyms: ['SEA', 'WAVES', 'TIDE', 'SURF', 'DEEP', 'WATERS']
 },
 {
-    word: 'BAND',
-    synonyms: ['GROUP', 'ENSEMBLE', 'ORCHESTRA', 'TROUPE', 'TROUPE']
+  word: 'DREAM',
+  synonyms: ['VISION', 'FANTASY', 'ASPIRATION', 'GOAL', 'IMAGINATION']
 },
 {
-    word: 'ALBUM',
-    synonyms: ['RECORD', 'COLLECTION', 'COMPILATION', 'SET', 'TRACKLIST']
+  word: 'PARTY',
+  synonyms: ['CELEBRATION', 'FEST', 'GATHERING', 'BASH', 'FIESTA']
 },
 {
-    word: 'BEAT',
-    synonyms: ['RHYTHM', 'PULSE', 'PATTERN', 'CADENCE', 'THUMP']
+  word: 'RAIN',
+  synonyms: ['SHOWER', 'DRIZZLE', 'DOWNPOUR', 'SPRINKLE', 'STORM']
 },
 {
-    word: 'SINGER',
-    synonyms: ['VOCALIST', 'PERFORMER', 'ARTIST', 'CHORISTER', 'SONGSTRESS']
+  word: 'MOUNTAIN',
+  synonyms: ['PEAK', 'SUMMIT', 'HILL', 'RIDGE', 'CLIFF']
 },
 {
-    word: 'COMPOSER',
-    synonyms: ['SONGWRITER', 'MUSICIAN', 'CREATOR', 'ARRANGER', 'ORCHESTRATOR']
+  word: 'MOVIE',
+  synonyms: ['FILM', 'PICTURE', 'FEATURE', 'SHOW', 'FLICK']
 },
 {
-    word: 'STUDIO',
-    synonyms: ['RECORDING ROOM', 'WORKSPACE', 'PRODUCTION HOUSE', 'MIXING SPACE', 'MUSIC ROOM']
+  word: 'PASTA',
+  synonyms: ['NOODLES', 'SPAGHETTI', 'MACARONI', 'PENNE', 'FETTUCCINE']
 },
 {
-    word: 'MICROPHONE',
-    synonyms: ['MIC', 'TRANSMITTER', 'AMPLIFIER', 'RECORDER', 'SPEAKER']
+  word: 'FOREST',
+  synonyms: ['WOODLAND', 'WOODS', 'JUNGLE', 'GROVE', 'THICKET']
 },
 {
-    word: 'GENRE',
-    synonyms: ['STYLE', 'CATEGORY', 'TYPE', 'CLASSIFICATION', 'FORM']
+  word: 'SMILE',
+  synonyms: ['GRIN', 'BEAM', 'SMIRK', 'LAUGH', 'HAPPY FACE']
 },
+{
+  word: 'BOOKSTORE',
+  synonyms: ['SHOP', 'LIBRARY', 'BOOKSHOP', 'STORE']
+},
+{
+  word: 'PLANET',
+  synonyms: ['WORLD', 'GLOBE', 'SPHERE', 'EARTH', 'HEAVENLY BODY']
+},
+{
+  word: 'STORM',
+  synonyms: ['THUNDER', 'LIGHTNING', 'GALE', 'TEMPEST', 'TORNADO']
+},
+{
+  word: 'BALLOON',
+  synonyms: ['BUBBLE', 'BLOWUP', 'INFLATABLE', 'FLOAT']
+},
+{
+  word: 'GUITAR',
+  synonyms: ['STRING', 'INSTRUMENT', 'ACOUSTIC', 'ELECTRIC', 'BASS']
+},
+{
+  word: 'CANDLE',
+  synonyms: ['WAX', 'LIGHT', 'FLAME', 'TAPER', 'TEALIGHT']
+},
+{
+  word: 'GAME',
+  synonyms: ['CONTEST', 'COMPETITION', 'MATCH', 'SPORT', 'TOURNAMENT']
+},
+{
+  word: 'TROPHY',
+  synonyms: ['AWARD', 'PRIZE', 'MEDAL', 'CUP', 'RECOGNITION']
+},
+{
+  word: 'FLOWER',
+  synonyms: ['BLOOM', 'BLOSSOM', 'PETAL', 'FLORA', 'BUD']
+},
+{
+  word: 'CITY',
+  synonyms: ['TOWN', 'METROPOLIS', 'URBAN', 'VILLAGE', 'DOWNTOWN']
+},
+{
+  word: 'DESERT',
+  synonyms: ['SAND', 'DUNES', 'WASTELAND', 'OASIS', 'ARID']
+},
+{
+  word: 'BREEZE',
+  synonyms: ['WIND', 'GUST', 'DRAFT', 'WHIFF', 'AIR']
+},
+{
+  word: 'JOURNEY',
+  synonyms: ['TRIP', 'VOYAGE', 'EXPEDITION', 'ODYSSEY', 'ADVENTURE']
+},
+{
+  word: 'SPICE',
+  synonyms: ['HERB', 'SEASONING', 'FLAVOR', 'ZEST', 'AROMA']
+},
+{
+  word: 'CLOUD',
+  synonyms: ['PUFF', 'MIST', 'FOG', 'HUMIDITY', 'VAPOR']
+},
+{
+  word: 'HONEY',
+  synonyms: ['NECTAR', 'SWEET', 'SYRUP', 'AMBER', 'GOLD']
+},
+{
+  word: 'FRIEND',
+  synonyms: ['PAL', 'BUDDY', 'ALLY', 'COMPANION', 'MATE']
+},
+{
+  word: 'TRUTH',
+  synonyms: ['FACT', 'REALITY', 'VERITY', 'HONESTY', 'ACCURACY']
+},
+{
+  word: 'WATERFALL',
+  synonyms: ['CASCADE', 'FALLS', 'RAPIDS', 'PLUNGE', 'STREAM']
+},
+{
+  word: 'COMET',
+  synonyms: ['ASTEROID', 'METEOR', 'SHOOTING STAR', 'CELESTIAL']
+},
+{
+  word: 'FIRE',
+  synonyms: ['FLAME', 'BLAZE', 'INFERNO', 'HEAT', 'EMBER']
+},
+{
+  word: 'ICE',
+  synonyms: ['FROST', 'SLEET', 'GLACIER', 'HAIL', 'SNOW']
+},
+{
+  word: 'MEADOW',
+  synonyms: ['FIELD', 'GRASSLAND', 'PASTURE', 'PLAIN', 'PRAIRIE']
+},
+{
+  word: 'STARS',
+  synonyms: ['TWINKLES', 'GALAXIES', 'LIGHTS', 'CONSTELLATIONS', 'SPARKLES']
+},
+{
+  word: 'JUNGLE',
+  synonyms: ['RAINFOREST', 'TROPICS', 'WILDERNESS', 'BUSH', 'THICKET']
+},
+{
+  word: 'STORY',
+  synonyms: ['TALE', 'NARRATIVE', 'FABLE', 'SAGA', 'LEGEND']
+},
+{
+  word: 'PAINT',
+  synonyms: ['COLOR', 'COAT', 'TINT', 'HUE', 'PIGMENT']
+},
+{
+  word: 'TOOL',
+  synonyms: ['INSTRUMENT', 'DEVICE', 'APPARATUS', 'UTENSIL', 'GEAR']
+},
+{
+  word: 'TUNNEL',
+  synonyms: ['PASSAGE', 'CHANNEL', 'TUBE', 'SUBWAY', 'UNDERPASS']
+},
+{
+  word: 'WIZARD',
+  synonyms: ['MAGICIAN', 'SORCERER', 'ENCHANTER', 'MAGE', 'SPELLCASTER']
+},
+{
+  word: 'ISLAND',
+  synonyms: ['ISLE', 'CAY', 'ATOLL', 'KEY', 'LAND']
+},
+{
+  word: 'GOLD',
+  synonyms: ['TREASURE', 'METAL', 'FORTUNE', 'WEALTH', 'ORE']
+},
+{
+  word: 'RIVER',
+  synonyms: ['STREAM', 'BROOK', 'CREEK', 'WATERWAY', 'CHANNEL']
+},
+{
+  word: 'SPACE',
+  synonyms: ['COSMOS', 'UNIVERSE', 'GALAXY', 'VOID', 'INFINITY']
+},
+{
+  word: 'GHOST',
+  synonyms: ['SPIRIT', 'SPECTER', 'PHANTOM', 'APPARITION', 'WRAITH']
+},
+{
+  word: 'WIND',
+  synonyms: ['BREEZE', 'GUST', 'GALE', 'DRAFT', 'WHIRL']
+},
+{
+  word: 'SHIP',
+  synonyms: ['VESSEL', 'BOAT', 'CRAFT', 'YACHT', 'LINER']
+},
+{
+  word: 'CAVE',
+  synonyms: ['GROTTO', 'HOLLOW', 'CAVERN', 'DEN', 'CHAMBER']
+},
+{
+  word: 'FROG',
+  synonyms: ['AMPHIBIAN', 'TOAD', 'HOPPER', 'LEAPER']
+},
+{
+  word: 'RACE',
+  synonyms: ['COMPETITION', 'CONTEST', 'TOURNAMENT', 'HEAT', 'RALLY']
+},
+{
+  word: 'MIRROR',
+  synonyms: ['GLASS', 'REFLECTOR', 'LOOKING GLASS']
+},
+{
+  word: 'CASTLE',
+  synonyms: ['FORT', 'PALACE', 'FORTRESS', 'MANOR', 'STRONGHOLD']
+},
+{
+  word: 'BUBBLE',
+  synonyms: ['BLOB', 'SPHERE', 'BALLOON', 'DROP', 'GLOBULE']
+},
+{
+  word: 'ROCK',
+  synonyms: ['STONE', 'BOULDER', 'PEBBLE', 'MINERAL', 'MASS']
+},
+{
+  word: 'PIANO',
+  synonyms: ['KEYBOARD', 'INSTRUMENT', 'GRAND', 'UPRIGHT']
+},
+{
+  word: 'BASKET',
+  synonyms: ['HAMPER', 'BOWL', 'CONTAINER', 'BIN', 'CRATE']
+},
+{
+  word: 'BRIDGE',
+  synonyms: ['SPAN', 'OVERPASS', 'VIADUCT', 'CAUSEWAY']
+},
+{
+  word: 'LADDER',
+  synonyms: ['STAIRS', 'STEPS', 'RUNG', 'SCAFFOLD']
+},
+{
+  word: 'RAINBOW',
+  synonyms: ['ARC', 'SPECTRUM', 'BOW', 'COLORS', 'BAND']
+},
+{
+  word: 'FARM',
+  synonyms: ['RANCH', 'HOMESTEAD', 'ESTATE', 'PLANTATION', 'ACREAGE']
+},
+{
+  word: 'ROSE',
+  synonyms: ['FLOWER', 'BLOSSOM', 'BLOOM', 'PETAL', 'BUD']
+},
+{
+  word: 'BRICK',
+  synonyms: ['BLOCK', 'STONE', 'MASONRY', 'TILE', 'SLAB']
+},
+{
+  word: 'NEIGHBOR',
+  synonyms: ['RESIDENT', 'NEARBY', 'LOCAL', 'FRIEND', 'COMMUNITY']
+},
+{
+  word: 'SCHOOL',
+  synonyms: ['ACADEMY', 'INSTITUTE', 'COLLEGE', 'UNIVERSITY', 'EDUCATION']
+},
+{
+  word: 'DRUM',
+  synonyms: ['BONGO', 'SNARE', 'BASS', 'BEAT', 'PERCUSSION']
+},
+{
+  word: 'WINDOW',
+  synonyms: ['PANE', 'GLASS', 'VIEW', 'PORTAL', 'SKYLIGHT']
+},
+{
+  word: 'DESK',
+  synonyms: ['TABLE', 'WORKSPACE', 'BENCH', 'COUNTER', 'STAND']
+},
+{
+  word: 'PILLOW',
+  synonyms: ['CUSHION', 'PAD', 'BOLSTER', 'SUPPORT']
+},
+{
+  word: 'DOOR',
+  synonyms: ['ENTRANCE', 'GATE', 'PORTAL', 'ENTRY']
+},
+{
+  word: 'HILL',
+  synonyms: ['MOUND', 'KNOLL', 'ELEVATION', 'UPLAND']
+},
+{
+  word: 'BRIDGE',
+  synonyms: ['CONNECTOR', 'SPAN', 'OVERPASS', 'LINK']
+},
+{
+  word: 'CLOUD',
+  synonyms: ['MIST', 'FOG', 'VAPOR', 'HAZE']
+},
+{
+  word: 'PLANE',
+  synonyms: ['AIRCRAFT', 'JET', 'FLIGHT', 'AIRLINER']
+},
+{
+  word: 'PEACE',
+  synonyms: ['TRANQUILITY', 'HARMONY', 'CALM', 'SERENITY']
+},
+{
+  word: 'MOUNTAIN',
+  synonyms: ['HILL', 'PEAK', 'SUMMIT', 'RIDGE']
+},
+{
+  word: 'VAN',
+  synonyms: ['VEHICLE', 'TRUCK', 'MINIVAN', 'SUV']
+},
+{
+  word: 'LAKE',
+  synonyms: ['POND', 'WATER', 'RESERVOIR', 'POOL']
+},
+{
+  word: 'ART',
+  synonyms: ['PAINTING', 'SCULPTURE', 'DESIGN', 'DRAWING']
+},
+{
+  word: 'SMOKE',
+  synonyms: ['FOG', 'MIST', 'HAZE', 'VAPOR']
+},
+{
+  word: 'BEACH',
+  synonyms: ['SHORE', 'COAST', 'SAND', 'SEASIDE', 'WATERFRONT']
+},
+{
+  word: 'RAIN',
+  synonyms: ['SHOWERS', 'DRIZZLE', 'DOWNPOUR', 'STORM', 'PRECIPITATION']
+},
+{
+  word: 'COOKIE',
+  synonyms: ['BISCUIT', 'SNACK', 'TREAT', 'DESSERT', 'SWEET']
+},
+{
+  word: 'PARK',
+  synonyms: ['GARDEN', 'RESERVE', 'GREENSPACE', 'FIELD', 'PLAYGROUND']
+},
+{
+  word: 'BOAT',
+  synonyms: ['VESSEL', 'SHIP', 'CRAFT', 'YACHT', 'BARGE']
+},
+{
+  word: 'VEGETABLE',
+  synonyms: ['PRODUCE', 'GREENS', 'PLANT', 'VEGGIE']
+},
+{
+  word: 'COAT',
+  synonyms: ['JACKET', 'OVERCOAT', 'WRAP', 'PARKA', 'CLOAK']
+},
+{
+  word: 'RIVER',
+  synonyms: ['STREAM', 'WATERWAY', 'BROOK', 'CURRENT']
+},
+{
+  word: 'CASTLE',
+  synonyms: ['PALACE', 'FORTRESS', 'MANSION', 'STRONGHOLD']
+},
+{
+  word: 'CARPET',
+  synonyms: ['RUG', 'MAT', 'RUNNER', 'TAPESTRY']
+},
+{
+  word: 'STADIUM',
+  synonyms: ['ARENA', 'FIELD', 'COLISEUM', 'BALLPARK']
+},
+{
+  word: 'GLUE',
+  synonyms: ['ADHESIVE', 'PASTE', 'CEMENT', 'BOND']
+},
+{
+  word: 'SALAD',
+  synonyms: ['MIX', 'BOWL', 'GREENS', 'VEGGIES']
+},
+{
+  word: 'TOY',
+  synonyms: ['PLAYTHING', 'DOLL', 'GAME', 'MODEL']
+},
+{
+  word: 'MAP',
+  synonyms: ['CHART', 'ATLAS', 'GUIDE', 'DIAGRAM']
+},
+{
+  word: 'SING',
+  synonyms: ['CHANT', 'HUM', 'SERENADE', 'CROON']
+},
+{
+  word: 'DESERT',
+  synonyms: ['WASTELAND', 'DUNES', 'SANDS', 'OASIS']
+},
+{
+  word: 'BRUSH',
+  synonyms: ['COMB', 'GROOM', 'SWEEP', 'POLISH']
+},
+{
+  word: 'SOCKS',
+  synonyms: ['STOCKINGS', 'FOOTWEAR', 'HOSE', 'KNITWEAR']
+},
+{
+  word: 'CANDLE',
+  synonyms: ['WAX', 'FLAME', 'TAPER', 'LIGHT']
+}
 ];
 
 // Game state
@@ -1296,6 +720,14 @@ function updateStreak() {
 function updateStreakDisplay() {
   document.querySelector('.high-score').innerHTML = 
       `🔥 Daily Streak: ${streak}`;
+}
+
+function returnToHome() {
+  manuallyExited = true;  // Set flag to true when exiting manually
+  document.getElementById("game").style.display = "none";       // Hide the game screen
+  document.getElementById("introScreen").style.display = "flex"; // Show the home screen
+  document.getElementById("homeLogo").style.display = "block";   // Ensure home logo is visible
+  gameRunning = false;                                           // Stop the game if it’s running
 }
 
 function getDailyWord() {
