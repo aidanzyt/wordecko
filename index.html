@@ -46,18 +46,18 @@
         }
 
         html, body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: var(--background);
-            min-height: 100vh;
-            height: 100%;
-            width: 100%;
-            overflow: hidden;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            position: fixed;
-            touch-action: none;
-        }
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: var(--background);
+    min-height: 100vh;
+    height: 100%;
+    width: 100%;
+    margin: 0; /* Remove any default margin */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    touch-action: none;
+}
 
         body::before {
             content: '';
@@ -89,15 +89,14 @@
         }
 
         .container {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            padding: 20px;
-            height: 100vh;
-            width: 100%;
-            overflow: hidden;
-        }
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: auto; /* Prevent unnecessary stretching */
+    max-width: 600px; /* Ensure a readable size */
+    padding: 20px;
+}
 
         .high-score {
     position: fixed;
@@ -381,8 +380,6 @@
             <button class="play-button" onclick="startGame()">Play</button>
         </div>
     </div>
-</body>
-
         <div class="game-container" id="game">
             <h2 class="target-word"></h2>
             <p class="score-display">Progress: 0/0 synonyms found</p>
