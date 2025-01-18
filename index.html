@@ -211,6 +211,23 @@
             margin: 10px 0;
         }
 
+        #gameHeader button {
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    background-color: rgba(255, 255, 255, 0.9); /* Optional: Background for better visibility */
+    padding: 8px 15px;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Optional: Adds a shadow for aesthetics */
+    z-index: 1000; /* Ensures it appears above other elements */
+    cursor: pointer;
+}
+
+#gameHeader button:hover {
+    background-color: #f0f0f0; /* Optional: Hover effect */
+}
+
         #wordInput:focus {
             outline: none;
             border-color: var(--primary-color);
@@ -376,7 +393,7 @@
         <div class="intro-container" id="introScreen">
             <img src="logo2.svg" alt="Wordecko Logo" id="homeLogo" class="logo">
             <h1>Welcome to Wordecko!</h1>
-            <p>Find all 5 most common synonyms<br>for the daily word.<br>How many can you discover?</p>
+            <p>Find all possible synonyms for the daily word.<br>How many can you discover?</p>
             <button class="play-button" onclick="startGame()">Play</button>
         </div>
     </div>
@@ -385,6 +402,9 @@
             <p class="score-display">Progress: 0/0 synonyms found</p>
             <input type="text" id="wordInput" placeholder="Enter a synonym" autocomplete="off">
             <div id="errorMessage"></div>
+            <div id="gameHeader">
+                <button onclick="returnToHome()">🏠 Return to Home</button>
+            </div>   
             <button id="submitButton">Submit</button>
             <div class="button-container">
                 <button class="hint-btn">Get Hint</button>
