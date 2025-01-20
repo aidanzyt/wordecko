@@ -1537,7 +1537,7 @@ function handleGameWin() {
   gameOver = true;
   updateStreak();
   markAsPlayed();
-  showPopupMessage("Congratulations! You found all 10 synonyms! 🎉");
+  showPopupMessage("Congratulations! You found all 5 synonyms! 🎉");
   setTimeout(showEndScreen, 1500);
 }
 
